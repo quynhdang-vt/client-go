@@ -1,0 +1,21 @@
+2023-05-24T06:46:43Z Next Iteration 15
+------------
+Pod created successfully..pod: {"metadata":{"name":"hello-15-1684910803","namespace":"aiware","uid":"1480cee5-25b8-4095-a4ca-bef3d6bbdd3c","resourceVersion":"5152453","creationTimestamp":"2023-05-24T06:46:43Z","labels":{"qdhello":"true"},"managedFields":[{"manager":"app","operation":"Update","apiVersion":"v1","time":"2023-05-24T06:46:43Z","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:labels":{".":{},"f:qdhello":{}}},"f:spec":{"f:containers":{"k:{\"name\":\"hello\"}":{".":{},"f:command":{},"f:image":{},"f:imagePullPolicy":{},"f:name":{},"f:resources":{},"f:terminationMessagePath":{},"f:terminationMessagePolicy":{}}},"f:dnsPolicy":{},"f:enableServiceLinks":{},"f:nodeSelector":{},"f:restartPolicy":{},"f:schedulerName":{},"f:securityContext":{},"f:terminationGracePeriodSeconds":{}}}}]},"spec":{"volumes":[{"name":"kube-api-access-b8wf6","projected":{"sources":[{"serviceAccountToken":{"expirationSeconds":3607,"path":"token"}},{"configMap":{"name":"kube-root-ca.crt","items":[{"key":"ca.crt","path":"ca.crt"}]}},{"downwardAPI":{"items":[{"path":"namespace","fieldRef":{"apiVersion":"v1","fieldPath":"metadata.namespace"}}]}}],"defaultMode":420}}],"containers":[{"name":"hello","image":"busybox:1.28","command":["sh","-c","echo \"Hello, Kubernetes!\" \u0026\u0026 sleep 30"],"resources":{},"volumeMounts":[{"name":"kube-api-access-b8wf6","readOnly":true,"mountPath":"/var/run/secrets/kubernetes.io/serviceaccount"}],"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","imagePullPolicy":"IfNotPresent"}],"restartPolicy":"Never","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","nodeSelector":{"runmode-engine":"true"},"serviceAccountName":"default","serviceAccount":"default","securityContext":{},"schedulerName":"default-scheduler","tolerations":[{"key":"node.kubernetes.io/not-ready","operator":"Exists","effect":"NoExecute","tolerationSeconds":30},{"key":"node.kubernetes.io/unreachable","operator":"Exists","effect":"NoExecute","tolerationSeconds":30}],"priority":0,"enableServiceLinks":true,"preemptionPolicy":"PreemptLowerPriority"},"status":{"phase":"Pending","qosClass":"BestEffort"}}
+.createPod returns <nil>
+Found UPDATE POD: Name=hello-15-1684910803, status=Pending, labels=map[qdhello:true]
+There are 1 nodes in the cluster with label=runmode-engine=true
+Node[0] =  {"name":"ip-10-99-103-120","ips":"","hostName":"ip-10-99-103-120","creationTimestamp":"2023-05-10T19:43:39Z","labels":{"beta.kubernetes.io/arch":"amd64","beta.kubernetes.io/instance-type":"k3s","beta.kubernetes.io/os":"linux","egress.k3s.io/cluster":"true","kubernetes.io/arch":"amd64","kubernetes.io/hostname":"ip-10-99-103-120","kubernetes.io/os":"linux","node-role.kubernetes.io/control-plane":"true","node-role.kubernetes.io/etcd":"true","node-role.kubernetes.io/master":"true","node.kubernetes.io/instance-type":"k3s","runmode-api":"true","runmode-apps":"true","runmode-controller":"true","runmode-db":"true","runmode-engine":"true","runmode-es":"true","runmode-hubagent":"true","runmode-kube":"true","runmode-logging":"true","runmode-minio":"true","runmode-nsq":"true","runmode-prometheus":"true","runmode-redis":"true","runmode-storage":"true"},"allocatableCPU":8,"allocatableMemory":33177505792}
+------------
+Found UPDATE POD: Name=hello-15-1684910803, status=Pending, labels=map[qdhello:true]
+There are 43 pods in the cluster
+------------
+Pod example-xxxxx not found in default namespace
+Sleeping for 1m0s....
+Found UPDATE POD: Name=hello-15-1684910803, status=Running, labels=map[qdhello:true]
+Found UPDATE POD: Name=hello-15-1684910803, status=Running, labels=map[qdhello:true]
+Found UPDATE POD: Name=hello-15-1684910803, status=Succeeded, labels=map[qdhello:true]
+2023-05-24T06:47:17Z Found a complete pod -- hello-15-1684910803 can I delete?
+hello-15-1684910803 -- Delete? err=<nil>
+Found UPDATE POD: Name=hello-15-1684910803, status=Succeeded, labels=map[qdhello:true]
+2023-05-24T06:47:17Z Found a complete pod -- hello-15-1684910803 can I delete?
+hello-15-1684910803 -- Delete? err=pods "hello-15-1684910803" not found
